@@ -1,0 +1,30 @@
+#! /usr/bin/env php
+<?php
+
+$baseDir = dirname(__DIR__);
+
+require_once "${baseDir}/vendor/autoload.php";
+
+use Symfony\Cmf\DevKit\Configuration\YamlLoader;
+use Symfony\Cmf\DevKit\Console\Application;
+use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\Filesystem\Filesystem;
+
+$fs = new Filesystem();
+$dotenv = new Dotenv();
+$loader = new YamlLoader("${baseDir}/resources/config.yml");
+$application = new Application('dev-kit', 'The Symfony CMF Development Kit');
+
+// Load environment variables
+$envFilePath = "${baseDir}/.env";
+
+if ($fs->exists($envFilePath)) {
+    $dotenv->load($envFilePath);
+}
+
+// Initialize the appication
+$application->setConfigurationLoader($loader);
+$application->setCacheDirectory("${baseDir}/cache");
+
+// And run it
+$application->run();

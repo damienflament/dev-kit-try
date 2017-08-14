@@ -1,0 +1,39 @@
+{
+    "name": "symfony-cmf/dev-kit",
+    "homepage": "http://cmf.symfony.com",
+    "description": "The Symfony CMF Development Kit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Symfony CMF Community",
+            "homepage": "https://github.com/symfony-cmf/Routing/contributors"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "symfony/console": "^3.3",
+        "symfony/config": "^3.3",
+        "symfony/yaml": "^3.3",
+        "symfony/filesystem": "^3.3",
+        "symfony/finder": "^3.3",
+        "symfony/process": "^3.3",
+        "symfony/dotenv": "^3.3",
+        "twig/twig": "^2.4",
+        "knplabs/github-api": "^2.5",
+        "php-http/guzzle6-adapter": "^1.1",
+        "composer/composer": "^1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Symfony\\Cmf\\DevKit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Symfony\\Cmf\\DevKit\\Tests\\": "tests/"
+        }
+    }
+}

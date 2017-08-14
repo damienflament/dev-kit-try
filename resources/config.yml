@@ -1,0 +1,11 @@
+organization:
+  name: damienflament
+
+repositories:
+  - routing-auto
+
+user:
+  name: damienflament
+  real_name: Damien Flament
+  email: damien.flament@gmx.com
+  token: '%env(GITHUB_TOKEN)%'

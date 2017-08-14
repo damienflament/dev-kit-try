@@ -1,0 +1,15 @@
+sudo: false
+dist: trusty
+
+language: php
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - cache
+
+php: 7.1
+
+install: composer update --prefer-dist
+
+script: vendor/bin/phpunit && bin/dev-kit dispatch --ansi -v
