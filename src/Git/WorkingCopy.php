@@ -129,14 +129,17 @@ class WorkingCopy
                 case '??':
                 case 'A':
                     $status = self::STATUS_NEW;
+
                     break;
 
                 case 'D':
                     $status = self::STATUS_DELETED;
+
                     break;
 
                 case 'M':
                     $status = self::STATUS_MODIFIED;
+
                     break;
 
                 default:

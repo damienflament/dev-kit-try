@@ -113,6 +113,7 @@ class Filesystem
                 // regular file
                 case 'string':
                     $fs->dumpFile($absolutePath, $specification);
+
                     break;
 
                 // directory
@@ -122,7 +123,7 @@ class Filesystem
                     // If the specification is an array containing a single
                     // integer, handle it as a directory with custom permissions.
                     // Otherwize, create the substructure.
-                    if (isset($specification[0]) && \is_integer($specification[0])) {
+                    if (isset($specification[0]) && \is_int($specification[0])) {
                         $fs->chmod($absolutePath, $specification[0]);
                     } else {
                         self::createFileStructure($absolutePath, $specification);
@@ -134,6 +135,7 @@ class Filesystem
                 case 'integer':
                     $fs->dumpFile($absolutePath, '');
                     $fs->chmod($absolutePath, $specification);
+
                     break;
 
                 // not existing file
@@ -141,6 +143,7 @@ class Filesystem
                     if ($fs->exists($absolutePath)) {
                         $fs->remove($absolutePath);
                     }
+
                     break;
 
                 // not handled specification

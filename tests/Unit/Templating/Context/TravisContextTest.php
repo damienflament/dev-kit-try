@@ -81,7 +81,7 @@ class TravisContextTest extends TestCase
             'a commit' => [
                 [
                     'REPO_SLUG' => 'foo/bar',
-                    'COMMIT_MESSAGE' => <<<_MESSAGE_
+                    'COMMIT_MESSAGE' => <<<"_MESSAGE_"
 lorem ipsum
 \x20
 dolor sit amet
@@ -94,7 +94,7 @@ _MESSAGE_
                     'repository' => 'foo/bar',
                     'commit' => [
                         'title' => 'lorem ipsum',
-                        'body' => <<<_BODY_
+                        'body' => <<<'_BODY_'
 dolor sit amet
 
 consectetur adipiscing elit

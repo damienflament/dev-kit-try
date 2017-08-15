@@ -66,12 +66,14 @@ class Git
                     ]]);
 
                     $this->initializeRepository($repository, $specification);
+
                     break;
 
                 // cloned repository
                 case 'string':
                     // set repository for cloning
                     $clones[$repository] = $specification;
+
                     break;
 
                 // not handled specification
@@ -80,6 +82,7 @@ class Git
                         'Specification of type "%s" not handled.',
                         $type
                     ));
+
                     break;
             }
         }

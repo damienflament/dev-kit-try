@@ -96,6 +96,7 @@ class DispatchCommand extends AbstractCommand
 
             if (!$workingCopy->hasChanges()) {
                 $output->text('<comment>No changes are needed.</comment>');
+
                 continue;
             }
 
@@ -110,6 +111,7 @@ class DispatchCommand extends AbstractCommand
             if ($isDryRun) {
                 $output->text('Resetting the changes...');
                 $workingCopy->reset();
+
                 continue;
             }
 
